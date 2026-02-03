@@ -1,0 +1,64 @@
+---
+---
+
+<section id="signup" class="py-24 hero-gradient relative overflow-hidden">
+  <!-- Background decoration -->
+  <div class="absolute inset-0 overflow-hidden pointer-events-none">
+    <div class="absolute top-0 left-1/4 w-[500px] h-[500px] rounded-full bg-primary-300/20 blur-3xl"></div>
+    <div class="absolute bottom-0 right-1/4 w-[400px] h-[400px] rounded-full bg-accent-300/20 blur-3xl"></div>
+  </div>
+  
+  <div class="relative max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+    <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900 tracking-tight mb-6">
+      Przestań tracić 
+      <span class="gradient-text">leady</span>
+    </h2>
+    <p class="text-lg text-slate-600 mb-10 max-w-xl mx-auto">
+      Dołącz do 20+ firm, które już testują Spotkaj.ai. 
+      Early access = 50% taniej na zawsze.
+    </p>
+    
+    <!-- Email Form -->
+    <form class="max-w-md mx-auto" onsubmit="event.preventDefault(); alert('Dziękujemy! Skontaktujemy się wkrótce.');">
+      <div class="flex flex-col sm:flex-row gap-3">
+        <input 
+          type="email" 
+          placeholder="Twój email" 
+          required
+          class="flex-1 px-5 py-4 rounded-xl border border-slate-200 bg-white text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent shadow-sm"
+        />
+        <button 
+          type="submit"
+          class="px-8 py-4 bg-primary-600 text-white font-semibold rounded-xl btn-hover hover:bg-primary-700 transition-all shadow-lg shadow-primary-500/25 whitespace-nowrap"
+        >
+          Zapisz się
+        </button>
+      </div>
+      <p class="text-sm text-slate-500 mt-4">
+        Dołącz do 20 firm testujących • Bez spamu • Wypisz się w każdej chwili
+      </p>
+    </form>
+    
+    {/* Trust badges */}
+    <div class="flex flex-wrap items-center justify-center gap-8 mt-12">
+      <div class="flex items-center gap-2 text-sm text-slate-600">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-green-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+        </svg>
+        <span>Bezpieczne dane</span>
+      </div>
+      <div class="flex items-center gap-2 text-sm text-slate-600">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-green-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+        </svg>
+        <span>14 dni zwrotu</span>
+      </div>
+      <div class="flex items-center gap-2 text-sm text-slate-600">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-green-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+        </svg>
+        <span>Bez karty kredytowej</span>
+      </div>
+    </div>
+  </div>
+</section>

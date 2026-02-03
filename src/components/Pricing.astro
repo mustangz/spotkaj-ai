@@ -1,0 +1,127 @@
+---
+const plans = [
+  {
+    name: 'Solo',
+    price: '199',
+    description: 'Dla freelancerów i małych firm',
+    features: [
+      '500 AI odpowiedzi/miesiąc',
+      '1 skrzynka email',
+      'Podstawowa kwalifikacja',
+      'Integracja z Google Calendar',
+      'Wsparcie email',
+    ],
+    cta: 'Wybierz Solo',
+    popular: false,
+  },
+  {
+    name: 'Pro',
+    price: '499',
+    description: 'Dla rosnących firm',
+    features: [
+      'Nielimitowane AI odpowiedzi',
+      '5 skrzynek email',
+      'Zaawansowana kwalifikacja',
+      'Integracja z CRM',
+      'Priority wsparcie',
+      'API dostęp',
+      'Custom branding',
+    ],
+    cta: 'Wybierz Pro',
+    popular: true,
+  },
+  {
+    name: 'Agency',
+    price: '999',
+    description: 'Dla dużych zespołów',
+    features: [
+      'Wszystko z Pro',
+      'Nielimitowane skrzynki',
+      'Dedykowany account manager',
+      'SLA gwarancja',
+      'Onboarding',
+      'Custom integracje',
+      'White-label',
+    ],
+    cta: 'Skontaktuj się',
+    popular: false,
+  },
+];
+---
+
+<section id="pricing" class="py-24 bg-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- Section Header -->
+    <div class="text-center max-w-3xl mx-auto mb-16">
+      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900 tracking-tight mb-6">
+        Prosty, przejrzysty 
+        <span class="text-primary-600">cennik</span>
+      </h2>
+      <p class="text-lg text-slate-600">
+        Early access = 50% taniej na zawsze. Bez ukrytych opłat.
+      </p>
+    </div>
+    
+    <!-- Pricing Cards -->
+    <div class="grid md:grid-cols-3 gap-8 lg:gap-6">
+      {plans.map((plan) => (
+        <div class={`relative rounded-2xl p-8 ${plan.popular ? 'bg-gradient-to-br from-primary-600 to-accent-600 text-white shadow-xl scale-105' : 'bg-slate-50 border border-slate-200 text-slate-900'} card-hover`}>
+          {/* Popular badge */}
+          {plan.popular && (
+            <div class="absolute -top-4 left-1/2 -translate-x-1/2">
+              <span class="inline-flex items-center px-4 py-1 rounded-full bg-yellow-400 text-yellow-900 text-sm font-semibold shadow-lg">
+                Najpopularniejszy
+              </span>
+            </div>
+          )}
+          
+          {/* Plan header */}
+          <div class="text-center mb-8">
+            <h3 class={`text-xl font-semibold mb-2 ${plan.popular ? 'text-white' : 'text-slate-900'}`}>
+              {plan.name}
+            </h3>
+            <p class={`text-sm mb-6 ${plan.popular ? 'text-primary-100' : 'text-slate-500'}`}>
+              {plan.description}
+            </p>
+            <div class="flex items-baseline justify-center gap-1">
+              <span class={`text-5xl font-bold ${plan.popular ? 'text-white' : 'text-slate-900'}`}>
+                {plan.price}
+              </span>
+              <span class={`text-lg ${plan.popular ? 'text-primary-200' : 'text-slate-500'}`}>zł</span>
+              <span class={`text-sm ${plan.popular ? 'text-primary-200' : 'text-slate-500'}`}>/mc</span>
+            </div>
+          </div>
+          
+          {/* Features */}
+          <ul class="space-y-4 mb-8">
+            {plan.features.map((feature) => (
+              <li class="flex items-start gap-3">
+                <div class={`w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5 ${plan.popular ? 'bg-white/20' : 'bg-primary-100'}`}>
+                  <svg xmlns="http://www.w3.org/2000/svg" class={`h-3 w-3 ${plan.popular ? 'text-white' : 'text-primary-600'}`} viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="20 6 9 17 4 12"/>
+                  </svg>
+                </div>
+                <span class={`text-sm ${plan.popular ? 'text-white/90' : 'text-slate-600'}`}>
+                  {feature}
+                </span>
+              </li>
+            ))}
+          </ul>
+          
+          {/* CTA Button */}
+          <a 
+            href="#signup"
+            class={`block w-full text-center py-3 px-6 rounded-xl font-semibold transition-all btn-hover ${plan.popular ? 'bg-white text-primary-600 hover:bg-slate-100' : 'bg-primary-600 text-white hover:bg-primary-700'}`}
+          >
+            {plan.cta}
+          </a>
+        </div>
+      ))}
+    </div>
+    
+    {/* Trust note */}
+    <p class="text-center text-sm text-slate-500 mt-12">
+      Wszystkie plany obejmują 14-dniowy okres próbny. Anuluj w dowolnym momencie.
+    </p>
+  </div>
+</section>
